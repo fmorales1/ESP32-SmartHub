@@ -1,0 +1,91 @@
+# ============================================
+# Python
+# ============================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+.venv/
+.venv312/
+venv/
+ENV/
+env/
+
+# ============================================
+# PlatformIO
+# ============================================
+.pio/
+.pioenvs/
+.piolibdeps/
+.piorepo/
+
+# ============================================
+# ESP-IDF
+# ============================================
+build/
+sdkconfig.old
+dependencies.lock
+
+# ============================================
+# IDEs e Editores
+# ============================================
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# ============================================
+# Arquivos de Log e Temporários
+# ============================================
+*.log
+*.tmp
+*.temp
+*.bak
+
+# ============================================
+# Arquivos de Configuração Sensíveis
+# ============================================
+# Descomente se quiser ignorar credenciais
+# config.h
+
+# ============================================
+# Arquivos de Build
+# ============================================
+*.o
+*.obj
+*.elf
+*.bin
+*.hex
+*.map
+
+# ============================================
+# Drivers (manter apenas referência)
+# ============================================
+# driver/
+
+# ============================================
+# Arquivos M3U/M3U8 de teste (opcionais)
+# ============================================
+# *.m3u
+# *.m3u8

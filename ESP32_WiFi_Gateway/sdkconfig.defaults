@@ -1,0 +1,28 @@
+# ESP32 WiFi Gateway - SDK Configuration
+# Habilita NAPT (Network Address Port Translation) para NAT
+
+# Configuração requerida pelo Arduino
+CONFIG_FREERTOS_HZ=1000
+
+# Habilita IP Forwarding
+CONFIG_LWIP_IP_FORWARD=y
+
+# Habilita NAPT
+CONFIG_LWIP_IPV4_NAPT=y
+
+# Configurações de WiFi
+CONFIG_ESP32_WIFI_AMPDU_TX_ENABLED=y
+CONFIG_ESP32_WIFI_AMPDU_RX_ENABLED=y
+CONFIG_ESP32_WIFI_NVS_ENABLED=y
+
+# Configurações de memória LWIP
+CONFIG_LWIP_MAX_SOCKETS=16
+CONFIG_LWIP_SO_REUSE=y
+CONFIG_LWIP_SO_REUSE_RXTOALL=y
+
+# Habilita DHCP Server
+CONFIG_LWIP_DHCPS=y
+
+# Aumenta buffers para melhor performance
+CONFIG_LWIP_TCP_SND_BUF_DEFAULT=5744
+CONFIG_LWIP_TCP_WND_DEFAULT=5744
